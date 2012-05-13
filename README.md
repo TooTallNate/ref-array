@@ -34,10 +34,11 @@ var IntArray = ArrayType(int)
 
 // now we can create array instances
 var a = new IntArray(5)
-
-
-// this gets very powerful when combined with `node-ffi` to invoke C functions
-gettimeofday(tv.ref(), null);
+a[0] = 0
+a[1] = 1
+a[2] = -1
+a[3] = 2
+a[4] = -2
 ```
 
 #### With `node-ffi`
