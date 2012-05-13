@@ -1,5 +1,5 @@
 { "name": "ref-array"
-, "description": "\"array\" type for Node.js"
+, "description": "Create C \"array\" instances on top of Buffers"
 , "keywords": [ "array", "ref" ]
 , "version": "0.0.1"
 , "author": "Nathan Rajlich <nathan@tootallnate.net> (http://tootallnate.net)"
