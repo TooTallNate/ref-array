@@ -41,7 +41,7 @@ a[3] = 2
 a[4] = -2
 ```
 
-#### Reading a NULL-terminated Array
+#### Reading a `NULL`-terminated Array
 
 ``` js
 // sometimes you get a variable length array that is terminated by a NULL byte.
