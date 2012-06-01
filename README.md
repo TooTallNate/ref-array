@@ -41,10 +41,27 @@ a[3] = 2
 a[4] = -2
 ```
 
+#### Reading a NULL-terminated Array
+
+``` js
+// sometimes you get a variable length array that is terminated by a NULL byte.
+var buf = new Buffer(int.size * 3)
+int.set(buf, int.size * 0, 5)
+int.set(buf, int.size * 1, 8)
+int.set(buf, int.size * 2, 0) // <- terminate with 0s
+
+// you can create an array instance with the length automatically determined
+var array = IntArray.untilZero(buf)
+console.log(array.length)
+// 2
+console.log(array)
+// [ 5, 8 ]
+```
+
 #### With `node-ffi`
 
 ``` js
-var ffi = require('node-ffi')
+var ffi = require('ffi')
 
 // the "int[]" type may be used as a "type" in FFI'd functions or callbacks
 var func = ffi.ForeignFunction(funcPointer, int, [ IntArray, int ])
