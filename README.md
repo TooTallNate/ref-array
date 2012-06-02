@@ -49,13 +49,6 @@ b[1] // 2
 b[2] // 3
 b[3] // 4
 b[4] // 5
-
-// as a bonus, you can pass in a JS Array with the values and length you would like set
-var c  = new IntArray([1, 2, 3, 4, 5])
-c.length // 5
-c[0] // 1
-c[1] // 2
-...
 ```
 
 #### Reading a `NULL`-terminated Array
