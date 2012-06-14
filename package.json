@@ -9,7 +9,8 @@
       "test": "cd test && node-gyp rebuild && mocha -gc --reporter spec *.js"
   }
 , "dependencies": {
-      "debug": "*"
+      "array-index": "*"
+    , "debug": "*"
     , "ref": "0"
   }
 , "devDependencies": {
