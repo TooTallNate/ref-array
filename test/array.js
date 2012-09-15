@@ -2,7 +2,7 @@
 var assert = require('assert')
   , ref = require('ref')
   , ArrayType = require('../')
-  , bindings = require('./build/Release/native_tests')
+  , bindings = require('bindings')({ module_root: __dirname, bindings: 'native_tests' })
 
 describe('Array', function () {
 
