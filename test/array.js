@@ -12,13 +12,13 @@ describe('Array', function () {
     assert.equal('function', typeof ArrayType)
   })
 
-  describe('int32', function () {
+  describe('int32[]', function () {
 
-    it('should act like an Int32Array', function () {
-      var Int32ArrayType = ArrayType('int32')
-      assert.equal(0, Int32ArrayType.size)
+    it('should act like an Int32Array with a number', function () {
+      var Int32Array = ArrayType('int32')
+      assert.equal(0, Int32Array.size)
 
-      var a = new Int32ArrayType(5)
+      var a = new Int32Array(5)
       assert.equal(5, a.length)
       assert.equal(20, a.buffer.length)
       a[0] = 0
@@ -27,6 +27,45 @@ describe('Array', function () {
       a[3] = 69
       a[4] = 1410214
       assert.deepEqual([0, 10, 234, 69, 1410214], a.toArray())
+    })
+
+    it('should act like an Int32Array with an array', function () {
+      var Int32Array = ArrayType('int32')
+
+      var input = [ 1, 4, 91, 123123, 5123512, 0, -1 ]
+      var a = new Int32Array(input)
+      assert.equal(input.length, a.length)
+      assert.deepEqual(input, a.toArray())
+    })
+
+  })
+
+  describe('void *[]', function () {
+
+    it('should have each element be "pointer" sized', function () {
+      var VoidPtrArray = ArrayType('void *')
+      assert.equal(ref.sizeof.pointer, VoidPtrArray.BYTES_PER_ELEMENT)
+    })
+
+    it('should accept arbitrary pointers', function () {
+      var VoidPtrArray = ArrayType('void *')
+
+      var a = new VoidPtrArray(5)
+      var ptr1 = Buffer(1)
+      var ptr2 = Buffer(1)
+      var ptr3 = Buffer(1)
+      a[0] = ref.NULL
+      a[1] = ref.NULL_POINTER
+      a[2] = ptr1
+      a[3] = ptr2
+      a[4] = ptr3
+
+      console.log(a)
+      assert.equal(a[0].address(), ref.NULL.address())
+      assert.equal(a[1].address(), ref.NULL_POINTER.address())
+      assert.equal(a[2].address(), ptr1.address())
+      assert.equal(a[3].address(), ptr2.address())
+      assert.equal(a[4].address(), ptr3.address())
     })
 
   })
