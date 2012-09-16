@@ -51,6 +51,8 @@ describe('Array', function () {
       var VoidPtrArray = ArrayType('void *')
 
       var a = new VoidPtrArray(5)
+      assert.equal(5, a.length)
+      assert.equal(a.length * ref.sizeof.pointer, a.buffer.length)
       var ptr1 = Buffer(1)
       var ptr2 = Buffer(1)
       var ptr3 = Buffer(1)
@@ -60,7 +62,6 @@ describe('Array', function () {
       a[3] = ptr2
       a[4] = ptr3
 
-      console.log(a)
       assert.equal(a[0].address(), ref.NULL.address())
       assert.equal(a[1].address(), ref.NULL_POINTER.address())
       assert.equal(a[2].address(), ptr1.address())
