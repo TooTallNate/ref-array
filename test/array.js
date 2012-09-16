@@ -12,6 +12,20 @@ describe('Array', function () {
     assert.equal('function', typeof ArrayType)
   })
 
+  describe('char[]', function () {
+
+    it('should map directly to a "string"', function () {
+      var CharArray = ArrayType('char')
+      var b = new Buffer('hello', 'ascii')
+      var a = new CharArray(b)
+      assert.equal(b.length, a.length)
+      for (var i = 0; i < b.length; i++) {
+        assert.equal(a[i], b[i])
+      }
+    })
+
+  })
+
   describe('int32[]', function () {
 
     it('should act like an Int32Array with a number', function () {
