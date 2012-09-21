@@ -85,4 +85,24 @@ describe('Array', function () {
 
   })
 
+  describe('.untilZeros(buffer)', function () {
+
+    it('should read a Buffer until a NULL pointer is found', function () {
+      var int = ref.types.int
+      var IntArray = ArrayType(int)
+
+      // manually create a NULL-terminated int[]
+      var buf = new Buffer(int.size * 3)
+      int.set(buf, int.size * 0, 5)
+      int.set(buf, int.size * 1, 8)
+      int.set(buf, int.size * 2, 0) // <- terminate with 0s
+
+      var array = IntArray.untilZeros(buf)
+      assert.equal(2, array.length)
+      assert.equal(5, array[0])
+      assert.equal(8, array[1])
+    })
+
+  })
+
 })

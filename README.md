@@ -62,7 +62,7 @@ int.set(buf, int.size * 1, 8)
 int.set(buf, int.size * 2, 0) // <- terminate with 0s
 
 // you can create an array instance with the length automatically determined
-var array = IntArray.untilZero(buf)
+var array = IntArray.untilZeros(buf)
 console.log(array.length)
 // 2
 console.log(array)
