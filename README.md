@@ -1,6 +1,6 @@
 ref-array
 =========
-### Create C "array" instances on top of Buffers
+### Create C typed "array" instances on top of Buffers
 [![Build Status](https://secure.travis-ci.org/TooTallNate/ref-array.png)](http://travis-ci.org/TooTallNate/ref-array)
 
 
@@ -34,6 +34,7 @@ var IntArray = ArrayType(int)
 
 // now we can create array instances; the constructor takes the same arguments
 // the native JS Array class
+
 var a = new IntArray(5) // by length
 a.length // 5
 a[0] = 0
@@ -42,7 +43,7 @@ a[2] = -1
 a[3] = 2
 a[4] = -2
 
-var b = new IntArray(1, 2, 3, 4, 5) // by varargs
+var b = new IntArray([1, 2, 3, 4, 5]) // with an existing Array
 b.length // 5
 b[0] // 1
 b[1] // 2
