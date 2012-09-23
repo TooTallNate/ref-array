@@ -13,9 +13,9 @@ describe('Array', function () {
   })
 
   describe('char[]', function () {
+    var CharArray = ArrayType('char')
 
     it('should map directly to a "string"', function () {
-      var CharArray = ArrayType('char')
       var b = new Buffer('hello', 'ascii')
       var a = new CharArray(b)
       assert.equal(b.length, a.length)
@@ -24,14 +24,22 @@ describe('Array', function () {
       }
     })
 
+    it('should throw an Error when invoked with no arguments', function () {
+      assert.throws(function () {
+        new CharArray()
+      })
+    })
+
   })
 
   describe('int32[]', function () {
+    var Int32Array = ArrayType('int32')
+
+    it('should have the type\'s size be 0 by default', function () {
+      assert.equal(0, Int32Array.size)
+    })
 
     it('should act like an Int32Array with a number', function () {
-      var Int32Array = ArrayType('int32')
-      assert.equal(0, Int32Array.size)
-
       var a = new Int32Array(5)
       assert.equal(5, a.length)
       assert.equal(20, a.buffer.length)
@@ -44,26 +52,28 @@ describe('Array', function () {
     })
 
     it('should act like an Int32Array with an array', function () {
-      var Int32Array = ArrayType('int32')
-
       var input = [ 1, 4, 91, 123123, 5123512, 0, -1 ]
       var a = new Int32Array(input)
       assert.equal(input.length, a.length)
       assert.deepEqual(input, a.toArray())
     })
 
+    it('should throw an Error when invoked with no arguments', function () {
+      assert.throws(function () {
+        new Int32Array()
+      })
+    })
+
   })
 
   describe('void *[]', function () {
+    var VoidPtrArray = ArrayType('void *')
 
     it('should have each element be "pointer" sized', function () {
-      var VoidPtrArray = ArrayType('void *')
       assert.equal(ref.sizeof.pointer, VoidPtrArray.BYTES_PER_ELEMENT)
     })
 
     it('should accept arbitrary pointers', function () {
-      var VoidPtrArray = ArrayType('void *')
-
       var a = new VoidPtrArray(5)
       assert.equal(5, a.length)
       assert.equal(a.length * ref.sizeof.pointer, a.buffer.length)
@@ -83,17 +93,29 @@ describe('Array', function () {
       assert.equal(a[4].address(), ptr3.address())
     })
 
+    it('should throw an Error when invoked with no arguments', function () {
+      assert.throws(function () {
+        new VoidPtrArray()
+      })
+    })
+
   })
 
   describe('fixed size arrays', function () {
 
-    it('should be created when invoked with no arguments', function () {
+    describe('int[10]', function () {
       var int = ref.types.int
       var IntArrayTen = ArrayType(int, 10)
-      assert.equal(int.size * 10, IntArrayTen.size)
 
-      var array = new IntArrayTen()
-      assert.equal(10, array.length)
+      it('should have the type\'s "size" property match the default size', function () {
+        assert.equal(int.size * 10, IntArrayTen.size)
+      })
+
+      it('should be created when invoked with no arguments', function () {
+        var array = new IntArrayTen()
+        assert.equal(10, array.length)
+      })
+
     })
 
   })
