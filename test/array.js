@@ -140,4 +140,31 @@ describe('Array', function () {
 
   })
 
+  describe('.ref()', function () {
+    var IntArray = ArrayType('int')
+
+    it('should return a Buffer that points to the base "buffer"', function () {
+      var a = new IntArray(1)
+      var r = a.ref()
+      assert.equal(r.readPointer(0).address(), a.buffer.address())
+    })
+
+    it('should return a Buffer with "indirection" equal to 1', function () {
+      var a = new IntArray(1)
+      var r = a.ref()
+      assert.equal(1, r.type.indirection)
+    })
+
+    it('should .deref() back into an instance of the ArrayType type', function () {
+      var a = new IntArray([ 69 ])
+      var r = a.ref()
+      var _a = r.deref()
+      assert(_a instanceof IntArray)
+      assert.equal(a.buffer.address(), _a.buffer.address())
+      assert.equal(1, a.length)
+      assert.equal(69, a[0])
+    })
+
+  })
+
 })
