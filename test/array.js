@@ -85,6 +85,19 @@ describe('Array', function () {
 
   })
 
+  describe('fixed size arrays', function () {
+
+    it('should be created when invoked with no arguments', function () {
+      var int = ref.types.int
+      var IntArrayTen = ArrayType(int, 10)
+      assert.equal(int.size * 10, IntArrayTen.size)
+
+      var array = new IntArrayTen()
+      assert.equal(10, array.length)
+    })
+
+  })
+
   describe('.untilZeros(buffer)', function () {
 
     it('should read a Buffer until a NULL pointer is found', function () {
