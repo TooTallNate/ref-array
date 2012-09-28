@@ -1,7 +1,7 @@
 { "name": "ref-array"
 , "description": "Create C \"array\" instances on top of Buffers"
 , "keywords": [ "array", "ref" ]
-, "version": "0.0.1"
+, "version": "0.0.2"
 , "author": "Nathan Rajlich <nathan@tootallnate.net> (http://tootallnate.net)"
 , "repository": { "type": "git", "url": "git://github.com/TooTallNate/ref-array.git" }
 , "main": "./lib/array.js"
