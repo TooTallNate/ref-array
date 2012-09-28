@@ -35,8 +35,8 @@ describe('Array', function () {
   describe('int32[]', function () {
     var Int32Array = ArrayType('int32')
 
-    it('should have the type\'s size be 0 by default', function () {
-      assert.equal(0, Int32Array.size)
+    it('should have the type\'s size be pointer-sized by default', function () {
+      assert.equal(ref.sizeof.pointer, Int32Array.size)
     })
 
     it('should act like an Int32Array with a number', function () {
