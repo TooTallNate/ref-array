@@ -1,15 +1,12 @@
 #include <stdlib.h>
-#include "v8.h"
-#include "node.h"
+#include "nan.h"
 
-using namespace v8;
 using namespace node;
 
 namespace {
 
-void Initialize(Handle<Object> target) {
-  HandleScope scope;
-
+void Initialize(v8::Handle<v8::Object> target) {
+  NanScope();
 
 }
 
