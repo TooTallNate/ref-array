@@ -1,21 +1,30 @@
-{ "name": "ref-array"
-, "description": "Create C \"array\" instances on top of Buffers"
-, "keywords": [ "array", "ref" ]
-, "version": "0.0.3"
-, "author": "Nathan Rajlich <nathan@tootallnate.net> (http://tootallnate.net)"
-, "repository": { "type": "git", "url": "git://github.com/TooTallNate/ref-array.git" }
-, "main": "./lib/array.js"
-, "scripts": {
-      "test": "node-gyp rebuild --directory test && mocha -gc --reporter spec"
+{
+  "name": "ref-array",
+  "description": "Create C \"array\" instances on top of Buffers",
+  "keywords": [
+    "array",
+    "ref"
+  ],
+  "version": "0.0.3",
+  "author": "Nathan Rajlich <nathan@tootallnate.net> (http://tootallnate.net)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TooTallNate/ref-array.git"
+  },
+  "main": "./lib/array.js",
+  "scripts": {
+    "test": "node-gyp rebuild --directory test && mocha -gc --reporter spec"
+  },
+  "dependencies": {
+    "array-index": "~0.0.2",
+    "debug": "*",
+    "ref": "0"
+  },
+  "devDependencies": {
+    "bindings": "*",
+    "mocha": "*"
+  },
+  "engines": {
+    "node": "*"
   }
-, "dependencies": {
-      "array-index": "~0.0.2"
-    , "debug": "*"
-    , "ref": "0"
-  }
-, "devDependencies": {
-      "bindings": "*"
-    , "mocha": "*"
-  }
-, "engines": { "node": "*" }
 }
