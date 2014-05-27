@@ -16,12 +16,12 @@
     "test": "node-gyp rebuild --directory test && mocha -gc --reporter spec"
   },
   "dependencies": {
-    "array-index": "~0.0.2",
-    "debug": "*",
-    "ref": "0"
+    "array-index": "~0.1.0",
+    "debug": "~0.8.1",
+    "ref": "~0.2.0"
   },
   "devDependencies": {
-    "bindings": "*",
+    "bindings": "~1.2.0",
     "mocha": "*"
   }
 }
