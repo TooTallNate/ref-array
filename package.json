@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "array-index": "~0.1.0",
-    "debug": "~1.0.2",
+    "debug": "2",
     "ref": "~0.3.2"
   },
   "devDependencies": {
