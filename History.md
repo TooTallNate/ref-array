@@ -1,10 +1,15 @@
 
+1.1.0 / 2015-01-02
+==================
+
+  * Add slice API (#4, @toots)
+
 1.0.0 / 2014-11-03
 ==================
 
- * gitignore: ignore top-level single letter ?.js test files
- * package: allow any "debug" v2
- * bumping to v1.0.0 for better-defined semver semantics
+  * gitignore: ignore top-level single letter ?.js test files
+  * package: allow any "debug" v2
+  * bumping to v1.0.0 for better-defined semver semantics
 
 0.0.4 / 2014-06-19
 ==================
