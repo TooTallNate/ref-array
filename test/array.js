@@ -167,4 +167,25 @@ describe('Array', function () {
 
   })
 
+  describe('.slice()', function () {
+    var IntArray = ArrayType('int')
+
+    it('should be able to return a slice of the base array', function () {
+      var x = new IntArray([12, 34, 56, 78])
+      var y = x.slice(1,3)
+      assert.equal(y.length, 2)
+      assert.equal(y[0], x[1])
+      assert.equal(y[1], x[2])
+    })
+
+    it('should be able to use only start parameter', function () {
+      var x = new IntArray([12, 34, 56, 78])
+      var y = x.slice(1)
+      assert.equal(y.length, 3)
+      assert.equal(y[0], x[1])
+      assert.equal(y[1], x[2])
+      assert.equal(y[2], x[3])
+    }) 
+  })
+
 })
