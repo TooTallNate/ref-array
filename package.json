@@ -23,6 +23,6 @@
   "devDependencies": {
     "bindings": "~1.2.0",
     "mocha": "*",
-    "nan": "git://github.com/rvagg/nan.git"
+    "nan": "^1.7.0"
   }
 }
