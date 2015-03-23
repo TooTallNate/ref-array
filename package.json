@@ -18,11 +18,11 @@
   "dependencies": {
     "array-index": "~0.1.0",
     "debug": "2",
-    "ref": "git://github.com/mensinda/ref.git"
+    "ref": "~1.0.1"
   },
   "devDependencies": {
     "bindings": "~1.2.0",
     "mocha": "*",
-    "nan": "^1.7.0"
+    "nan": "~1.7.0"
   }
 }
