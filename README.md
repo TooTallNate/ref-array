@@ -2,7 +2,7 @@ ref-array
 =========
 ### Create C typed "array" instances on top of Buffers
 [![Build Status](https://secure.travis-ci.org/TooTallNate/ref-array.svg)](https://travis-ci.org/TooTallNate/ref-array)
-[![Build Status](https://ci.appveyor.com/api/projects/status/auxk791h56hbughd)](https://ci.appveyor.com/project/TooTallNate/ref-array)
+[![Build Status](https://ci.appveyor.com/api/projects/status/auxk791h56hbughd?svg=true)](https://ci.appveyor.com/project/TooTallNate/ref-array)
 
 
 This module offers an "array" implementation on top of Node.js Buffers using
