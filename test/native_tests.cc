@@ -6,7 +6,7 @@ using namespace node;
 namespace {
 
 void Initialize(v8::Handle<v8::Object> target) {
-  NanScope();
+  Nan::HandleScope scope;
 
 }
 
