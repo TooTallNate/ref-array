@@ -16,7 +16,7 @@
     "test": "node-gyp rebuild --directory test && mocha -gc --reporter spec"
   },
   "dependencies": {
-    "array-index": "~0.1.0",
+    "array-index": "~0.1.1",
     "debug": "2",
     "ref": "1"
   },
