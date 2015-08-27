@@ -1,4 +1,15 @@
 
+1.1.2 / 2015-08-27
+==================
+
+  * appveyor: test node v0.12, and x64 platform
+  * package: allow any "ref" v1
+  * package: update "nan" to v2 for tests
+  * package: update "array-index" to v0.1.1
+  * travis: fix node v0.8 and add iojs v2.5 and v3
+  * travis: remove node v0.6, v0.11, add v0.12
+  * README: use SVG appveyor badge
+
 1.1.1 / 2015-03-24
 ==================
 
