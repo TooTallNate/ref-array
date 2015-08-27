@@ -185,7 +185,21 @@ describe('Array', function () {
       assert.equal(y[0], x[1])
       assert.equal(y[1], x[2])
       assert.equal(y[2], x[3])
-    }) 
+    })
+  })
+
+  describe('native tests', function () {
+    var IntArray = ArrayType('int')
+
+    it('should be pass an Array to a native function', function () {
+      var input = [-1, -25, -3111, -41234, -5]
+      var array = new IntArray(input)
+
+      bindings.arrayAbs(array.buffer, array.length)
+
+      assert.deepEqual(array.toJSON(), input.map(Math.abs));
+    })
+
   })
 
 })
