@@ -197,7 +197,7 @@ describe('Array', function () {
 
       bindings.arrayAbs(array.buffer, array.length)
 
-      assert.deepEqual(array.toJSON(), input.map(Math.abs));
+      assert.deepEqual(array.toJSON(), input.map(Math.abs))
     })
 
   })
