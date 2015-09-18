@@ -12,6 +12,7 @@
     "url": "git://github.com/TooTallNate/ref-array.git"
   },
   "main": "./lib/array.js",
+  "license": "MIT",
   "scripts": {
     "test": "node-gyp rebuild --directory test && mocha -gc --reporter spec"
   },
