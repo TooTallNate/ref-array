@@ -1,3 +1,12 @@
+1.2.0 / 2016-10-14
+==================
+
+* [[`ba418e8fb3`](https://github.com/TooTallNate/ref-array/commit/ba418e8fb3)] - update "array-index" to v1 (Nathan Rajlich)
+* [[`991e894d75`](https://github.com/TooTallNate/ref-array/commit/991e894d75)] - **package**: add "license" field (Nathan Rajlich)
+* [[`d0565662a3`](https://github.com/TooTallNate/ref-array/commit/d0565662a3)] - **package**: update dev deps (Nathan Rajlich)
+* [[`cce5fb960c`](https://github.com/TooTallNate/ref-array/commit/cce5fb960c)] - **array**: s/slicer/slice/ (Nathan Rajlich)
+* [[`8050a81587`](https://github.com/TooTallNate/ref-array/commit/8050a81587)] - **appveyor**: fix node v0.8, test io.js v2.5 and v3 (Nathan Rajlich)
+* [[`c636c37e80`](https://github.com/TooTallNate/ref-array/commit/c636c37e80)] - **test**: add a test for passing Arrays to a native addon function (Nathan Rajlich)
 
 1.1.2 / 2015-08-27
 ==================
