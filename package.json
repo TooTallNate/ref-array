@@ -5,7 +5,7 @@
     "array",
     "ref"
   ],
-  "version": "1.2.0",
+  "version": "2.0.0",
   "author": "Nathan Rajlich <nathan@tootallnate.net> (http://tootallnate.net)",
   "repository": {
     "type": "git",
@@ -14,16 +14,16 @@
   "main": "./lib/array.js",
   "license": "MIT",
   "scripts": {
-    "test": "node-gyp rebuild --directory test && mocha -gc --reporter spec"
+    "test": "node-gyp rebuild --directory test && mocha -gc-global --expose-gc --reporter spec"
   },
   "dependencies": {
     "array-index": "1",
-    "debug": "2",
-    "ref": "1"
+    "debug": "4",
+    "ref": "lxe/ref#node-12"
   },
   "devDependencies": {
     "bindings": "1",
-    "mocha": "3",
+    "mocha": "6",
     "nan": "2"
   }
 }
